@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  /* Royal Trust Palette */
+  --background: #002147;
+  /* Deep Navy Blue (Backgrounds) */
+  --foreground: #FFFFFF;
+  /* White (Clean, readable text) */
+
+  --primary: #D4AF37;
+  /* Shining Gold */
+  --primary-foreground: #000000;
+
+  --secondary: #002147;
+  /* Deep Navy Blue */
+  --secondary-foreground: #FFFFFF;
+
+  --accent: #F5F5DC;
+  /* Warm Cream */
+
+  --card: #F5F5DC;
+  /* Warm Cream (Product photos background) */
+  --card-foreground: #002147;
+  /* Navy Text on Cream Card */
+
+  --border: #D4AF37;
+  /* Shining Gold */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
