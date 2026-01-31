@@ -48,7 +48,7 @@ export const getCategoryFolders = async (): Promise<Category[]> => {
     const drive = getDriveClient();
 
     // Read categories from file
-    const categoryFilePath = path.join(process.cwd(), 'catagory.txt');
+    const categoryFilePath = path.join(process.cwd(), 'category.txt');
     let fileContent = '';
     try {
         fileContent = fs.readFileSync(categoryFilePath, 'utf-8');
