@@ -5,10 +5,9 @@ export async function GET(
     request: NextRequest,
     { params }: { params: Promise<{ id: string }> }
 ) {
-    const { id } = await params;
-    const drive = getDriveClient();
-
     try {
+        const { id } = await params;
+        const drive = getDriveClient();
         const response = await drive.files.get(
             { fileId: id, alt: 'media' },
             { responseType: 'stream' }

@@ -45,7 +45,13 @@ export interface DriveImage {
 }
 
 export const getCategoryFolders = async (): Promise<Category[]> => {
-    const drive = getDriveClient();
+    let drive;
+    try {
+        drive = getDriveClient();
+    } catch (error) {
+        console.warn("Google Drive credentials not set or unavailable:", error);
+        return [];
+    }
 
     // Read categories from file
     const categoryFilePath = path.join(process.cwd(), 'category.txt');
@@ -97,7 +103,13 @@ export const getCategoryFolders = async (): Promise<Category[]> => {
 };
 
 export const getImagesInFolder = async (folderId: string): Promise<DriveImage[]> => {
-    const drive = getDriveClient();
+    let drive;
+    try {
+        drive = getDriveClient();
+    } catch (error) {
+        console.warn("Google Drive credentials not set or unavailable:", error);
+        return [];
+    }
 
     try {
         const res = await drive.files.list({
