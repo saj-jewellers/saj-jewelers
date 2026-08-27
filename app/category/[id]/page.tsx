@@ -1,7 +1,7 @@
 import { getImagesInFolder } from "@/lib/googleDrive";
 import ImageGrid from "@/components/ImageGrid";
+import BackButton from "@/components/BackButton";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
 export const revalidate = 3600;
 
@@ -20,13 +20,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         <main className="min-h-screen bg-[#002147] p-4 md:p-8">
             <div className="max-w-7xl mx-auto">
                 <header className="mb-8 flex items-center gap-4 border-b border-[#D4AF37]/30 pb-4">
-                    <Link
-                        href="/"
-                        className="p-2 -ml-2 hover:bg-white/10 rounded-full transition-colors text-white hover:text-[#D4AF37]"
-                        aria-label="Back to Categories"
-                    >
-                        <ArrowLeft className="w-6 h-6" />
-                    </Link>
+                    <BackButton />
                     <h1 className="text-2xl md:text-3xl font-bold text-[#D4AF37]">
                         {name ? decodeURIComponent(name) : 'Gallery'}
                     </h1>

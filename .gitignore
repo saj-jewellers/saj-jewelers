@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 saj-jewelers-catalogue-ad35edc5af50.json
+Environment variables.txt
+*.mjs.tmp
+
