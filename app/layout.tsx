@@ -22,9 +22,19 @@ export const metadata: Metadata = {
     siteName: "Saj Jewelers",
     images: [
       {
-        url: "/logo.png",
-        width: 760,
-        height: 760,
+        url: "/logo-preview.png",
+        secureUrl: "https://saj-jewelers.vercel.app/logo-preview.png",
+        width: 500,
+        height: 500,
+        type: "image/png",
+        alt: "Saj Jewelers Logo",
+      },
+      {
+        url: "/logo-preview.jpg",
+        secureUrl: "https://saj-jewelers.vercel.app/logo-preview.jpg",
+        width: 500,
+        height: 500,
+        type: "image/jpeg",
         alt: "Saj Jewelers Logo",
       },
     ],
@@ -35,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Saj Jewelers - Exclusive Jewellery Collection",
     description: "Explore our latest exclusive collection of Gold, Diamond, and Silver Jewellery designs at Saj Jewelers.",
-    images: ["/logo.png"],
+    images: ["/logo-preview.png"],
   },
   icons: {
     icon: [
@@ -54,6 +64,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="bn">
+      <head>
+        <meta property="og:image" content="https://saj-jewelers.vercel.app/logo-preview.png" />
+        <meta property="og:image:secure_url" content="https://saj-jewelers.vercel.app/logo-preview.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />
+        <meta property="og:image:alt" content="Saj Jewelers Logo" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:image" content="https://saj-jewelers.vercel.app/logo-preview.png" />
+      </head>
       <body className={`${outfit.variable} antialiased`}>
         {children}
       </body>
